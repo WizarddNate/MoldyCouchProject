@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://blikov0guy0go"]
+
+[ext_resource type="Script" path="res://scenes/timeline_controller.gd" id="1_qlx3w"]
+[ext_resource type="Texture2D" uid="uid://bj7x7jlgygmfd" path="res://expressionism.png" id="2_api4j"]
+
+[node name="test_scene" type="Node2D"]
+script = ExtResource("1_qlx3w")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="background" type="TextureRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_api4j")
+metadata/_edit_use_anchors_ = true
+
+[node name="start_button" type="Button" parent="Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Start Timeline
+"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="Control/start_button" to="." method="_on_start_button_pressed"]

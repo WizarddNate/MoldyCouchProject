@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://kmhscytlsk3x"]
+
+[ext_resource type="Script" path="res://scripts/talk_area.gd" id="1_jldx6"]
+[ext_resource type="Texture2D" uid="uid://dgufe8he1pu2e" path="res://art/Ninja Adventure - Asset Pack/Ui/Emote/emote20.png" id="2_x6c3i"]
+
+[node name="TalkArea" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_jldx6")
+
+[node name="thought" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -14)
+texture = ExtResource("2_x6c3i")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

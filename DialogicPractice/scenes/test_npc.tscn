@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmu1sy0j5ixf2"]
+
+[ext_resource type="Script" path="res://scripts/test_npc.gd" id="1_brboj"]
+[ext_resource type="Texture2D" uid="uid://dbsgc3vtxtokd" path="res://art/Ninja Adventure - Asset Pack/Actor/Characters/DemonRed/SpriteSheet.png" id="2_5bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wb47o"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h5ui5"]
+atlas = ExtResource("2_5bvp3")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggpot"]
+atlas = ExtResource("2_5bvp3")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a656k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h5ui5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggpot")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}]
+
+[node name="Test_NPC" type="StaticBody2D"]
+script = ExtResource("1_brboj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_wb47o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_a656k")
+animation = &"idle"
+autoplay = "idle"

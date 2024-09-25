@@ -1,0 +1,16 @@
+[background arg="res://expressionism.png" fade="0.2"]
+join test_char 1 [animation="Slide In Left" length="0.4" wait="true"]
+test_char (Neutral): Wow, Can you believe it?!! A bona-fide video game!!! My name is Chilchuck.
+- tell me more about this "Video game"
+	test_char: Well. Nate's goal is to make a quasi-visual novel.
+	test_char: By that, I mean you'll have a standard dialogue system like this for most of the game, but theres also an overworld system that you can walk around in!
+	test_char: You were just in it earilier, before you walked up to talk to me!
+	test_char: We'll  probably end up adding an inventory system too, and who knows what else!? But this is the core gameplay as of right now.
+	test_char: ... Well! Bye!
+- the chucksterrrrrrrr
+	test_char: you literally hate me.
+	test_char: What is WRONG with you.
+	test_char: ...
+	test_char: whatever man I dont actually wanna talk to you anymore.
+leave test_char [animation="Slide Out Left" length="4" wait="true"]
+[background fade="0.2"]
